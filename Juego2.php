@@ -1,4 +1,4 @@
-<html><head><title> Juego2 </title></head></html>
+<html><head><title> Juego2 </title></head>
  <link href="css/desplegable/transfomracion.css" rel="stylesheet" type="text/css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="raw">
@@ -46,7 +46,7 @@
       </div>
     </div>
   </div>
-</div>
+</div></html>
     <?php
 
 /* 

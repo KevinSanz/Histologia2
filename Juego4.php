@@ -18,7 +18,16 @@
         <link rel="stylesheet" href="/resources/demos/style.css">
         <script>
   $( function() {
-    $( "#draggable" ).draggable();
+    $( ".draggable" ).draggable();
+    $( ".droppable" ).droppable({
+      drop: function( e, ui ) {
+          var posX = e.pageX - $(this).position().left;
+          var posY = e.pageY - $(this).position().top;
+        $( this )
+          .append('<div id="recuadro" style="width: 130px; height: 130px; border: solid green 1px; position:absolute; top:'+posY+'px; left:'+posX+'px;"></div>');
+          console.log("ha funcionado");
+      }
+    });
   } );
   </script>
         <style>
@@ -39,7 +48,7 @@
                 <!--<Aqui empieza el menu de la pagina >-->
                 <header>
 		<div class="menu_bar">
-			<a href="#" class="bt-menu">Hitoslogía</a>
+			<a href="#" class="bt-menu">Histología</a>
 		</div>
 
 		<nav>
@@ -55,7 +64,7 @@
 					</ul>
 				</li>
 				<li><a href="#">Resultados</a></li>
-                                <li><a href="#">Ramdom</a></li>
+                                <li><a href="#">Random</a></li>
 				
 			</ul>
 		</nav>
@@ -72,23 +81,23 @@
                 
                     <div class="col">
                         <div class="col-sm-4">
-                            <div draggable="true">
-                            <a id="imagen1" href="#" class="thumbnail" onclick="dibujaLinea();">
-                            <img src="imagenes/fondoNico.jpg" alt="...">
+                            <div class="draggable">
+                            <img src="imagenes/fondoNico.jpg" alt="..." style="max-height: 250px; max-width: 400px">
                             <br>
-                            </a>
+                            
                             </div>
-                            <a href="#" class="thumbnail">
-                            <img src="imagenes/fondoNico.jpg">
-                            </a>
+                            <div class="draggable">
+                                
+                            <img src="imagenes/fondoNico.jpg" style="max-height: 250px; max-width: 400px">
+                            </div>
+                            <div class="draggable">
                             
-                            <a href="#" class="thumbnail">
-                            <img src="imagenes/fondoNico.jpg">
-                            </a>
+                            <img src="imagenes/fondoNico.jpg" style="max-height: 250px; max-width: 400px">
+                            </div>
+                            <div class="draggable">
                             
-                            <a href="#" class="thumbnail">
-                            <img src="imagenes/fondoNico.jpg">
-                            </a>
+                            <img src="imagenes/fondoNico.jpg" style="max-height: 250px; max-width: 400px">
+                            </div>
                         </div>
                     
                      </div>
@@ -100,22 +109,23 @@
                      </div>
                 <div class="col">
                         <div class="col-sm-4">
-                            <a id="imagen2" href="#" class="thumbnail">
-                            <img src="imagenes/fondoNico.jpg" alt="...">
+                            <div class="droppable">
+                            <img src="imagenes/fondoNico.jpg" alt="..." style="max-height: 250px; max-width: 400px">
                             <br>
-                            </a>
-                            <div style="">
-                            <a href="#" class="thumbnail">
-                            <img src="imagenes/fondoNico.jpg">
-                            </a>
                             
-                            <a href="#" class="thumbnail" >
-                            <img src="imagenes/fondoNico.jpg">
-                            </a>
+                            </div>
+                            <div class="droppable">
+                                
+                            <img src="imagenes/fondoNico.jpg" style="max-height: 250px; max-width: 400px">
+                            </div>
+                            <div class="droppable">
                             
-                            <a href="#" class="thumbnail">
-                            <img src="imagenes/fondoNico.jpg">
-                            </a>
+                            <img src="imagenes/fondoNico.jpg" style="max-height: 250px; max-width: 400px">
+                            </div>
+                            <div class="droppable">
+                            
+                            <img src="imagenes/fondoNico.jpg" style="max-height: 250px; max-width: 400px">
+                            </div>
                         </div>
                     
                      </div>
@@ -147,14 +157,8 @@
         ?>
     </body>
     <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-        function dibujarLinea(){
-            var line1 = $('#line1');
-            var div1 = $('#imagen1');
-            var div2 = $('#imagen2');
-            var pos1 = div1.position();
-            var pos2 = div2.position();
-            line1.attr('x1',pos1.left).attr('y1',pos1.top).attr('x2',pos2.left).attr('y2',pos2.top);
-    }
+        
     </script>

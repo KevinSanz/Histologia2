@@ -21,7 +21,7 @@
             }
     }
     else{
-        require 'index.php';
+        require 'index_1.php';
     }
         ?>
 ?>
