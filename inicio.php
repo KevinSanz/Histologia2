@@ -41,13 +41,13 @@
 					<a href="#">Juegos</a>
 					<ul class="children">
                                             <li><a href="Juego1.php">Juego 1</a></li>
-						<li><a href="#">Juego 2</a></li>
+                                            <li><a href="Juego2.php">Juego 2</a></li>
 						<li><a href="#">Juego 3</a></li>
-						<li><a href="#">Juego 4</a></li>
+						<li><a href="Juego3.php">Juego 4</a></li>
 					</ul>
 				</li>
 				<li><a href="#">Resultados</a></li>
-                                <li><a href="#">Ramdom</a></li>
+                                <li><a id="random" href="#" onclick="getRandom()">Random</a></li>
 				
 			</ul>
 		</nav>
@@ -112,3 +112,12 @@
     </body>
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>      
+        function getRandom() {
+            var numero;
+            numero = Math.floor(Math.random() * (5 - 1)) + 1;;
+            console.log(numero);
+            random.href="Juego"+numero+".php";
+        }
+    </script>
+        
